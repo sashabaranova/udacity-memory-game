@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Memory Game</title>
+
+	<!-- Meta tags -->
+	<meta charset="utf-8">
+	<!-- setting the viewport to enable consistent display across any devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- linking the stylesheets for the app -->
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/animation.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/landscape.css">
+	<!-- linking fontawsome styles for icons used in the app -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+	<!-- linking google fonts styles -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald|Pirata+One" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1 id="main-heading">Memory game</h1>
+	</header>
+	<!-- main element contains game score bar and cards container -->
+	<main>
+		<ul id="game-bar">
+			<!-- text content for the first three elements is generated with JS -->
+			<li id="stars"></li>
+			<li id="move-count"></li>
+			<li id="timer"></li>
+			<li id="refresh"><i class="fas fa-redo"></i></li>
+		</ul>
+		<!-- element containing the cards, cards are generated with JS -->
+		<div id="container"></div>
+	</main>
+	<!-- script is at the end of the file so that JS starts working when DOM is ready -->
+	<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/*LANDSCAPE SYLES FOR MOBILE DEVICES and TABLETS*/
+
+@media (max-width: 812px) and (orientation: landscape) {
+
+	/*adjust main width for landscape display so that it takes up more side space*/
+	main {
+		max-width: 90%;
+	}
+	
+	/*adjust heading*/
+	#main-heading {
+		font-size: 1.6em;
+	}
+
+	#container {
+		/*always display cards as two rows of 8 elements*/
+		grid-template-columns: repeat(8, 1fr);
+		/*Adjusting cards height for even bigger devices*/
+		grid-auto-rows: 110px;
+	}
+
+	#game-bar {
+		max-width: 540px;
+		/*always display game bar as four columns*/
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	#game-bar li {
+		/*add padding to make buttons (e.g. refresh easier to press)*/
+		padding: 0 10px;
+	}
+
+	i.fa-check-circle {
+		/*adjust win board display depending on the device height*/
+	    margin-top: 15vh;
+	}
+}
+
+@media (max-width: 700px) and (orientation: landscape) {
+
+    main {
+		max-width: 100%;
+	}
+	#container {
+		/*Adjusting cards height for bigger devices*/
+		grid-auto-rows: 100px;
+	}
+
+
+@media (max-width: 600px) and (orientation: landscape) {
+
+	#container {
+		/*Adjusting cards height for smaller devices*/
+		grid-auto-rows: 90px;
+	}
+}

@@ -1,0 +1,42 @@
+/**CARD ANIMATIONS*/
+
+@keyframes shake {
+  
+  0% {
+    transform: translateX(-1px);
+  }
+  
+  10%, 90% {
+    transform: translateX(2px);
+  }
+  
+  20%, 60%, 80% {
+    transform: translateX(-3px);
+  }
+
+  30%, 70% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes flash {
+
+  50% {
+    opacity: 0;
+  }
+
+}
+
+/*Add animations for cards that match and that don't match by setting corresponding class attributes*/
+
+.shake {
+	animation: shake .4s;
+}
+
+.flash {
+	animation: flash .5s ease;
+}
+
+
+
+

@@ -1,0 +1,210 @@
+* {
+	box-sizing: border-box;
+}
+
+body, 
+html {
+	width: 100%;
+	/*apply background to the whole page*/
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: "Oswald", sans-serif;
+	color: #c2dae2;
+
+	/*gradient background for all prefixes*/
+	background: #1b5288;
+	background: -moz-radial-gradient(center, ellipse cover, #1b5288 0%, #112a46 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #1b5288), color-stop(25%, #194878), color-stop(100%, #112a46));
+	background: -webkit-radial-gradient(center, ellipse cover, #1b5288 0%, #112a46 100%);
+	background: -o-radial-gradient(center, ellipse cover, #1b5288 0%, #112a46 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #1b5288 0%, #112a46 100%);
+	background: radial-gradient(ellipse at center, #1b5288 0%, #112a46 100%);
+}
+
+main {
+	max-width: 540px;
+	margin: 0 auto;
+}
+
+#main-heading,
+h2 {
+	text-align: center;
+	font-family: "Pirata One", cursive;
+}
+
+#main-heading {
+	text-transform: capitalize;
+}
+
+
+/*GAME SCORE BAR*/
+#game-bar {
+	padding: 0;
+	width: 70%;
+	/*responsive top and bottom margins*/
+	margin: 1vh auto; 
+	/*Turn ul into CSS grid to enable responsive display*/
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+#game-bar li {
+	list-style: none;
+	display: inline;
+	margin: 0;
+	/*make buttons more convenient for small devices*/
+	padding: 7px 0;
+}
+
+.on, 
+#refresh {
+	color: #7ccce8 ;
+}
+
+.off {
+	opacity: 0.8;
+}
+
+#refresh {
+	/*position the refresh button in the grid*/
+	grid-column: 1 / 4;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+#timer {
+	letter-spacing: 2px;
+}
+
+
+/*
+*
+CARDS 
+*
+*/
+
+/*Cards container*/
+
+#container {
+	/*background-image: linear-gradient(45deg, #007FAF, #5F4B8B);*/
+	padding: 10px;
+	margin-top: -10px;
+	/*Display the container as a grid to enable responsive layout*/
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 90px;
+	grid-gap: 7px;
+}
+
+.card {
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/*Add box shadows to selected elements*/
+
+.card,
+/*also adding the same box shadow to the button from the win board*/
+#btn {
+	-webkit-box-shadow: 1px 2px 3px 0 #060f19;
+	-moz-box-shadow: 1px 2px 3px 0 #060f19;
+	box-shadow: 1px 2px 3px 0 #060f19;
+}
+
+/*Card back side*/
+
+.back {
+	background-color: #0d2139;
+	color: #fff;
+}
+
+/*hover effects for card back side*/
+.back:hover {
+	transition: 0.3s;
+	background-color: #7ccce8;
+	opacity: 0.7;
+}
+
+/*Card front sides styling*/
+
+.front {
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.front[type="0"] {
+	background-image: url(../img/jonsnow_sm.jpg);
+}
+
+.front[type="1"] {
+	background-image: url(../img/sansa_sm.jpg);
+}
+
+.front[type="2"] {
+	background-image: url(../img/arya_sm.jpg);
+}
+
+.front[type="3"] {
+	background-image: url(../img/daenerys_sm.jpg);
+}
+
+.front[type="4"] {
+	background-image: url(../img/cersei_sm.jpg);
+}
+
+.front[type="5"] {
+	background-image: url(../img/tyrion_sm.jpg);
+}
+
+.front[type="6"] {
+	background-image: url(../img/viserion_sm.jpg);
+}
+
+.front[type="7"] {
+	background-image: url(../img/night_king_sm.jpg);
+}
+
+
+/*WIN BOARD*/
+
+/*fontawsome icon*/
+i.fa-check-circle {
+	color: #7ccce8;
+	/*adjust win board display depending on the device height*/
+	margin-top: 20vh;
+}
+
+/*play again button styling*/
+#btn {
+	font: inherit;
+	color: #c2dae2;
+	border: none;
+	border-radius: 3px;
+	text-transform: uppercase;
+	background-color: #0d2139;
+	padding: 5px 15px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+/*remove default outline from the button*/
+#btn:focus {
+	outline: none;
+}
+
+/*hover effects for the button*/
+#btn:hover {
+	transform: scale(1.2);
+	transition: .1s ease;
+}
+
+#stars span {
+	transition: all 1s ease;
+	/*add spacing between stars*/
+	margin: 0 2px;
+}

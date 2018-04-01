@@ -1,0 +1,47 @@
+/*RESPONSIVE STYLES*/
+
+/*Adjusting cards height for small devices*/
+@media screen and (min-width: 360px) {
+	#container {
+		grid-auto-rows: 100px;
+	}
+}
+
+/*Adjusting cards height for small devices*/
+@media screen and (min-width: 400px) {
+	#container {
+		grid-auto-rows: 120px;
+	}
+}
+
+/*Adjusting cards height for small devices*/
+@media screen and (min-width: 450px) {
+	#container {
+		grid-auto-rows: 140px;
+	}
+}
+
+@media screen and (min-width: 500px) {
+
+	/*Adjusting cards height for bigger devices*/
+	#container {
+		grid-auto-rows: 150px;
+	}
+
+	/*Adjusting game bar height for bigger devices*/
+	#game-bar {
+		max-width: 540px;
+		margin: 25px auto;
+		/*display game bar as 4 columns*/
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	#game-bar li {
+		padding: 0 10px;
+	}
+
+	#refresh {
+	/*change refresh button position in the greed*/
+	grid-column: 4;
+	font-size: 1em;
+}
