@@ -1,8 +1,8 @@
 // Declaring some global variables to be used further in the app
-const container = document.getElementById('container');
+const containerEl = document.getElementById('container');
 const moveCountEl = document.getElementById('move-count');
-const refresh = document.getElementById('refresh');
-const timer = document.getElementById('timer');
+const refreshEl = document.getElementById('refresh');
+const timerEl = document.getElementById('timer');
 const starsEl = document.getElementById('stars');
 
 let appState = null;
@@ -14,7 +14,7 @@ let appState = null;
 */
 
 // Enable card clicking feature by delegating event listener to container children elements
-container.addEventListener('click', function(e) {
+containerEl.addEventListener('click', function(e) {
 	if (e.target.nodeName === 'DIV') {
 		// get card index value from data-index attribute
 		const index = e.target.getAttribute('data-index');
@@ -23,7 +23,7 @@ container.addEventListener('click', function(e) {
 });
 
 //Refresh the page by clicking the refresh arrow button and calling dispatch function for load event
-refresh.addEventListener('click', function() {
+refreshEl.addEventListener('click', function() {
 	dispatch({type: 'load'});
 });
 
@@ -77,10 +77,12 @@ function cloneState(state) {
 	if (state === null) {
 		return null;
 	}
-	const newState = {...state};
+	// const newState = {...state}; - Changed to ES5 for Safari
+	const newState = JSON.parse(JSON.stringify(state));
 	newState.cards = [];
 	for (const card of state.cards) {
-		newState.cards.push({...card});
+		// newState.cards.push({...card}); - Changed to ES5 for Safari
+		newState.cards.push(JSON.parse(JSON.stringify(card)));
 	}
 	return newState;
 }
@@ -107,7 +109,7 @@ function renderWin(state) {
 	button.setAttribute('id', 'btn');
 	header.textContent = 'Congratulations! Winter is here!';
 	generateStarCountText(state, p1);
-	p2.textContent = 'Your time is ' + timer.textContent;
+	p2.textContent = 'Your time is ' + timerEl.textContent;
 	button.textContent = 'Play again';
 	fragment.appendChild(icon);
 	fragment.appendChild(header);
@@ -165,7 +167,7 @@ function render(currentState, newState) {
 		const minutes = Math.floor(newState.secondsElapsed / 60);
 		const seconds = newState.secondsElapsed - minutes*60;
 
-		timer.textContent = (minutes < 10 ? '0' + minutes + ':' : minutes + ':') + (seconds < 10 ? '0' + seconds : seconds);
+		timerEl.textContent = (minutes < 10 ? '0' + minutes + ':' : minutes + ':') + (seconds < 10 ? '0' + seconds : seconds);
 	}
 
 	//enable rating (star) count feature in game bar by appending stars and setting their classes depending on starCount value
@@ -197,8 +199,8 @@ function render(currentState, newState) {
 			// cardElement.textContent = card.type;
 			fragment.appendChild(cardElement);
 		}
-		container.innerHTML = '';
-		container.appendChild(fragment);
+		containerEl.innerHTML = '';
+		containerEl.appendChild(fragment);
 	}
 }
 
