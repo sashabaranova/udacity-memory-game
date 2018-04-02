@@ -18,8 +18,6 @@ The player also gets a star rating as follows:
 
 - 1 star for up to 23 moves
 
-- 0 stars for >23 moves
-
 When all cards are matched, a win board with the game score pops up.
 
 ## Dependencies

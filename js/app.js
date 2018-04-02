@@ -90,10 +90,8 @@ function generateStarCountText(state, element) {
 	const defaultText = 'You won with ' + state.moveCount + ' moves and ';
 	if (state.starCount > 0 && state.starCount !== 1) {
 		element.textContent = defaultText + state.starCount + ' stars \u{1F609}';
-	} else if (state.starCount === 1) {
-		element.textContent = defaultText + state.starCount + ' star \u{1F60A}';
 	} else {
-		element.textContent = defaultText + 'no stars \u{1F611}';
+		element.textContent = defaultText + state.starCount + ' star \u{1F60A}';
 	}
 }
 
@@ -224,7 +222,6 @@ function countStars(state) {
 	switch (state.moveCount) {
 	case 16:
 	case 20:
-	case 24:
 		state.starCount--;
 	}
 }
