@@ -10,7 +10,7 @@ module.exports = function(grunt) {
           sizes: [{
             width: 800,
             suffix: '_sm',
-            quality: 50
+            quality: 15
           }]
           // ,{
           //   width: 1600,
